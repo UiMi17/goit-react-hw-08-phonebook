@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 export default function ColorTabs() {
-  const [value, setValue] = useState('contacts');
+  const [value, setValue] = useState('login');
   const navigate = useNavigate();
   const location = useLocation();
 
