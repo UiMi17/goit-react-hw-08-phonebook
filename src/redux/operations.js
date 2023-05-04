@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://644bf0b817e2663b9dfc5b56.mockapi.io';
+// TODO: Переписати Thunks на Swagger для реєстрації та логінізації користувача
 
 export const fetchContactsThunk = createAsyncThunk(
   '@@contacts/fetchAll',
@@ -10,7 +10,7 @@ export const fetchContactsThunk = createAsyncThunk(
       const response = await axios.get('/contacts');
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -24,7 +24,7 @@ export const addContactThunk = createAsyncThunk(
       });
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -36,7 +36,7 @@ export const deleteContactThunk = createAsyncThunk(
       await axios.delete(`/contacts/${id}`);
       return id;
     } catch (error) {
-      thunkAPI.rejectWithValue(error);
+      thunkAPI.rejectWithValue(error.message);
     }
   },
   {

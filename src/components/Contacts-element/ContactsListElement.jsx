@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { StyledLi, StyledButton } from './StyledContactsElement';
 
 const ContactsListElement = ({ name, number, id, handleDeleteBtnClick }) => {
+
   return (
     <>
       <StyledLi>
@@ -18,6 +19,7 @@ const ContactsListElement = ({ name, number, id, handleDeleteBtnClick }) => {
         </StyledButton>
       </StyledLi>
     </>
+    
   );
 };
 
