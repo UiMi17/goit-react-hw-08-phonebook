@@ -7,15 +7,15 @@ import {
   selectContacts,
   selectFilter,
   selectIsLoading,
-} from 'redux/contactsSelectors';
+} from 'redux/Contacts/contactsSelectors';
 import { useEffect } from 'react';
 import {
   addContactThunk,
   deleteContactThunk,
   fetchContactsThunk,
-} from 'redux/operations';
+} from 'redux/Contacts/contactsOperations';
 import { nanoid } from 'nanoid';
-import { setFilter } from 'redux/contactsSlice';
+import { setFilter } from 'redux/Contacts/contactsSlice';
 import Filter from 'components/Filter/Filter';
 import { TailSpin } from 'react-loader-spinner';
 

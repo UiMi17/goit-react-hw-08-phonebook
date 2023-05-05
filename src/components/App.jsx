@@ -6,8 +6,12 @@ import Login from 'pages/Login/Login';
 import { PrivateRoute } from 'HOC/PrivateRoute';
 import { PublicRoute } from 'HOC/PublicRoute';
 import SignUp from 'pages/SignUp/SignUp';
+import { useSelector } from 'react-redux';
+import { selectIsOnline } from 'redux/Auth/authSelectors';
 
 export const App = () => {
+  const isOnline = useSelector(selectIsOnline);
+
   return (
     <>
       <Navigation />
@@ -39,7 +43,7 @@ export const App = () => {
           }
         />
 
-        <Route path="*" element={<Login />} />
+        <Route path="*" element={isOnline ? <Contacts /> : <Login />} />
       </Routes>
     </>
   );

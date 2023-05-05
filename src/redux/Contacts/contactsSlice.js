@@ -3,7 +3,7 @@ import {
   addContactThunk,
   deleteContactThunk,
   fetchContactsThunk,
-} from './operations';
+} from './contactsOperations';
 
 // TODO: Переписати слайсер на роботу зі Swagger для авторизації.
 
